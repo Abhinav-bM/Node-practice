@@ -39,9 +39,11 @@
 // console.log(math.substract(2,2));
 
 // or // fourth import method
-const math = require("./moduleExportsPattern-math")
-const {add, substract} = math;
-console.log(add(2,2));
-console.log(substract(3,2));
+// const math = require("./moduleExportsPattern-math")
+// const {add, substract} = math;
+// console.log(add(2,2));
+// console.log(substract(3,2));
+
+
 
 
