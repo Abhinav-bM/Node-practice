@@ -81,32 +81,70 @@
 
 
 
-// fs - module ( file system - module )
-const fs = require("node:fs")
+// // fs - module ( file system - module )
+// const fs = require("node:fs")
 
-// method to read content of a file
-const fileContents = fs.readFileSync("./file.txt", "utf-8" )//the sync represents is the method is a synchronous way of reading th file   // to read it in human readable format setting the second format, first one was file name
-console.log(fileContents); // will get buffer with binary data
+// // method to read content of a file
+// const fileContents = fs.readFileSync("./file.txt", "utf-8" )//the sync represents is the method is a synchronous way of reading th file   // to read it in human readable format setting the second format, first one was file name
+// console.log(fileContents); // will get buffer with binary data
 
-// read file method
-fs.readFile("./file.txt", "utf-8", (error, data)=>{  //this is aynchronous method
-    if(error){
-        console.log(error);
-    }else{
-        console.log(data);
-    }
-})
+// // read file method
+// fs.readFile("./file.txt", "utf-8", (error, data)=>{  //this is aynchronous method
+//     if(error){
+//         console.log(error);
+//     }else{
+//         console.log(data);
+//     }
+// })
 
 
-// writeFile-have both syn and async versions - used to write contents in to a file
-// writeFileSync
-fs.writeFileSync("./greet.txt", "helooo") // syn version
+// //  writeFile -have both syn and async versions - used to write contents in to a file
+// // writeFileSync
+// fs.writeFileSync("./greet.txt", "helooo") // syn version
 
-fs.writeFile("./greet.txt", "Hello abhinav", (err)=>{ //async verion  // in this example ,this will override the previous content of the file
-    if(err){
-        console.log(err);                          
-    }else{
-        console.log("file written");
-    }
-})
+// fs.writeFile("./greet.txt", " Hello abhinav", { flag : "a"}, (err)=>{ //async verion 
+//                                                       // in this example ,this will override the previous content of the file
+//                                                      // suppose if you want to append content with previous add {flag : "a"}
+//     if(err){
+//         console.log(err);                          
+//     }else{
+//         console.log("file written");
+//     }
+// })
+
+
+
+//  fs - promise module
+// const fs = require("node:fs/promises")
+
+// console.log("first");                // just to check aynchromous
+
+// fs.readFile("./file.txt", "utf-8")
+// .then((data)=>{
+//     console.log(data);
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })
+
+// console.log("second");                  // just to check aynchromous
+
+
+// // using async/await
+// console.log("first");   // just to check aynchromous
+
+// async function readFile(){
+//     try{
+//         const data = await fs.readFile("./file.txt", "utf-8")
+//         console.log(data);
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
+
+// readFile();
+
+// console.log("second");      // just to check aynchromous
+
+
 
