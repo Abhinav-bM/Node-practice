@@ -15,11 +15,3 @@
 // const [one, two, ...rest] = a;
 
 // console.log(rest);
-
-
- function a(...numbers){
-   const b = numbers.reduce((num,values)=>num+values);
-   return b;
- }
-
- console.log(a(1,2,3,4,4))
